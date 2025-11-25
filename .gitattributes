@@ -1,0 +1,2 @@
+# Tandai folder vendor sebagai library pihak ketiga agar tidak dihitung
+vendor/* linguist-vendored
