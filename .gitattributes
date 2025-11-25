@@ -1,2 +1,2 @@
 # Tandai semua file .sql sebagai file yang digenerate otomatis
-*.sql linguist-generated
+linguist-language=PHP
