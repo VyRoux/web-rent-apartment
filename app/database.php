@@ -1,8 +1,14 @@
 <?php
     // Class Database untuk mengelola koneksi ke database SQL
     class Database{
+
+        // Atribut class Database
         private static $instance = null;
+        
+        // Menyimpan koneksi Database
         private $connection;
+
+        // konfigurasi Database
         private $host = 'localhost';
         private $user = 'root';
         private $password = '';
@@ -20,13 +26,20 @@
             }
         }
 
-        private static function getInstance(){
+        /**  
+        Metode statis publik untuk mendapatkan instance tunggal dari kelas Database.
+        Metode ini adalah "pintu gerbang" global untuk mendapatkan koneksi.
+        */
+        public static function getInstance(){
             if (self::$instance == null){
+                // Jika belum ada Instance, maka buat baru
                 self::$instance = new Database();
-            } 
+            }
+            // Mengembalikan Instance yang sudah ada
             return self::$instance;
         }
 
+        // Metode publik untuk mendapatkan koneksi Database
         public function getConnection(){
             return $this->connection;
         }

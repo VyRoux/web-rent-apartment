@@ -1,5 +1,5 @@
 <?php
-// Mulai session untuk menampilkan pesan error atau success
+// Mulai session untuk menampilkan pesan error
 session_start();
 ?>
 
@@ -8,19 +8,19 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | Sewa Apartemen</title>
+    <title>Daftar | Sewa Apartemen</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body { background-color: #f8f9fa; }
-        .login-container { max-width: 400px; }
+        .register-container { max-width: 450px; }
     </style>
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100">
-    <div class="login-container">
+    <div class="register-container">
         <div class="card shadow-sm">
             <div class="card-body">
-                <h3 class="card-title text-center mb-4">Login</h3>
+                <h3 class="card-title text-center mb-4">Daftar Akun</h3>
 
                 <!-- Menampilkan Pesan Error -->
                 <?php if (isset($_SESSION['error'])): ?>
@@ -29,26 +29,31 @@ session_start();
                     </div>
                 <?php endif; ?>
 
-                <!-- Menampilkan Pesan Success (misal dari register) -->
-                <?php if (isset($_SESSION['success'])): ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $_SESSION['success']; unset($_SESSION['success']); ?>
-                    </div>
-                <?php endif; ?>
-
-                <form action="auth/login-proses.php" method="POST">
+                <form action="auth/register-proses.php" method="POST">
                     <div class="mb-3">
                         <label for="username" class="form-label">Username</label>
                         <input type="text" class="form-control" id="username" name="username" required>
                     </div>
                     <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="full_name" class="form-label">Nama Lengkap</label>
+                        <input type="text" class="form-control" id="full_name" name="full_name">
+                    </div>
+                    <div class="mb-3">
                         <label for="password" class="form-label">Password</label>
                         <input type="password" class="form-control" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                    <div class="mb-3">
+                        <label for="password_confirm" class="form-label">Konfirmasi Password</label>
+                        <input type="password" class="form-control" id="password_confirm" name="password_confirm" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Daftar</button>
                 </form>
 
-                <p class="text-center mt-3 mb-0">Belum punya akun? <a href="register.php">Daftar</a></p>
+                <p class="text-center mt-3 mb-0">Sudah punya akun? <a href="index.php">Login</a></p>
             </div>
         </div>
     </div>
