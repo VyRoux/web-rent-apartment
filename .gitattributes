@@ -1,2 +1,2 @@
-# Tandai semua file di dalam folder vendor sebagai kode pihak ketiga
-vendor/* linguist-vendored
+# Perintahkan GitHub untuk menganggap semua file sebagai PHP
+* linguist-language=PHP
