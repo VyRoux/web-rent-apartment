@@ -165,6 +165,14 @@ class rentController {
         return $stmt->get_result()->fetch_assoc();
     }
 
+    public function updateUser($id, $username, $fullName, $email, $role) {
+    $query = "UPDATE users SET username = ?, full_name = ?, email = ?, role = ? WHERE id = ?";
+    $stmt = $this->connection->prepare($query);
+    $stmt->bind_param("ssssi", $username, $fullName, $email, $role, $id);
+    return $stmt->execute();
+}
+
+
     public function deleteUserAndTransactions($id) {
         $this->connection->begin_transaction();
         try {

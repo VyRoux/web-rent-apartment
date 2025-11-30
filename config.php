@@ -4,4 +4,4 @@ if (!defined('CAN_ACCESS')) {
 }
 
 // --- GANTI NAMA FOLDER INI SESUAI FOLDER KAMU ---
-define('BASE_URL', 'http://localhost/web-rent-apartment-adding-dashboard/');
+define('BASE_URL', 'http://localhost/web-rent-apartment-almost-done/');
