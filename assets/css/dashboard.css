@@ -1,0 +1,187 @@
+/* ...existing code... */
+:root {
+    --bs-primary: #4f46e5;
+    --bs-secondary: #6c757d;
+    --bs-success: #198754;
+    --bs-info: #0dcaf0;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --sidebar-width: 250px;
+    --top-navbar-height: 60px;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bs-light);
+    padding-top: var(--top-navbar-height);
+}
+
+/* --- Top Navbar --- */
+.top-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--top-navbar-height);
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+    z-index: 1030;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+/* Ensure dropdown appears above navbar */
+.dropdown-menu {
+    z-index: 2000;
+}
+
+/* --- Sidebar --- */
+.sidebar {
+    position: fixed;
+    top: var(--top-navbar-height);
+    bottom: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    z-index: 1020;
+    padding-top: 1rem;
+    background-color: var(--bs-dark);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+/* --- Main Content --- */
+.main-content {
+    margin-left: var(--sidebar-width);
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-height: calc(100vh - var(--top-navbar-height));
+    transition: margin-left 0.3s ease-in-out;
+}
+
+/* --- Card --- */
+.card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, .075);
+}
+
+.card-header {
+    background-color: var(--bs-light);
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+    font-weight: 600;
+}
+
+/* --- Tabel --- */
+.table-actions {
+    white-space: nowrap;
+    text-align: center;
+}
+
+.btn-action {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+/* --- Tombol Toggle untuk Mobile --- */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 75px;
+    left: 15px;
+    z-index: 1040;
+    background: none;
+    border: none;
+    color: var(--bs-dark);
+    font-size: 1.5rem;
+}
+
+/* --- Custom Image Uploader --- */
+.image-uploader {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    background-color: #f8f9fa;
+}
+
+.image-uploader:hover {
+    border-color: #007bff;
+    background-color: #e9ecef;
+}
+
+.image-uploader.dragover {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.image-uploader .placeholder {
+    color: #6c757d;
+    pointer-events: none; /* Agar teks tidak mengganggu event click */
+}
+
+.image-uploader .preview-container {
+    margin-top: 15px;
+}
+
+.image-uploader .preview-image {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none; /* Sembunyikan awalnya */
+}
+
+.image-uploader .remove-image {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(220, 53, 69, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+    cursor: pointer;
+    display: none; /* Sembunyikan awalnya */
+}
+
+/* --- RESPONSIVE BREAKPOINT --- */
+
+/* Untuk tablet (768px ke bawah) */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+/* Untuk HP (576px ke bawah) */
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%;
+        padding-top: var(--top-navbar-height);
+        transform: translateX(-100%);
+    }
+    
+    .main-content {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: calc(var(--top-navbar-height) + 1rem);
+    }
+}
