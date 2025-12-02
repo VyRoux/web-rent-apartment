@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2025 at 02:05 PM
+-- Generation Time: Nov 30, 2025 at 12:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -31,6 +31,7 @@ CREATE TABLE `apartments` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
   `address` varchar(255) NOT NULL,
   `price_per_month` decimal(10,2) NOT NULL,
   `image_url` varchar(255) DEFAULT NULL,
@@ -71,6 +72,13 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 --
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `email`, `full_name`, `created_at`, `role`) VALUES
+(8, 'admin', '$2y$10$3xXOqDvQJZ.dCF4DF1hd2unpgKXCQbPzNB.0wJJc0cDuKRlLAHQBK', 'admin@apartment.id', 'Admin', '2025-11-30 00:25:33', 'admin');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -104,19 +112,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `apartments`
 --
 ALTER TABLE `apartments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
