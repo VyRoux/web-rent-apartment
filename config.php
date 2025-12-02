@@ -5,4 +5,5 @@ if (!defined('CAN_ACCESS')) {
 
 // --- GANTI NAMA FOLDER INI SESUAI FOLDER KAMU ---
 
-define('BASE_URL', 'http://localhost/web-rent-apartment-main');
+define('BASE_URL', 'http://localhost/web-rent-apartment-main/');
+
