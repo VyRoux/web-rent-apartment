@@ -13,11 +13,11 @@ Web Rent Apartment adalah aplikasi web untuk mencari, menyewa, dan memanajemen a
 
 ## User Guide
 
-Untuk panduan lengkap penggunaan aplikasi, silakan unduh file berikut:
+Panduan pengguna lengkap tersedia dalam format PDF:
 
-[User Guide (DOCX)](./userguide.docx)
+[Lihat User Guide (PDF)](./userguide.pdf)
 
-Atau baca panduan singkat di bawah ini.
+Atau baca ringkasan di bawah ini.
 
 ## Instalasi
 
