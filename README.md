@@ -11,6 +11,14 @@ Web Rent Apartment adalah aplikasi web untuk mencari, menyewa, dan memanajemen a
 - Ulasan dan rating apartemen
 - Notifikasi penyewaan
 
+## User Guide
+
+Untuk panduan lengkap penggunaan aplikasi, silakan unduh file berikut:
+
+[User Guide (DOCX)](./userguide.docx)
+
+Atau baca panduan singkat di bawah ini.
+
 ## Instalasi
 
 ### 1. Clone repositori
